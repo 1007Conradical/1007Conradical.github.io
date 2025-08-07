@@ -1,1 +1,90 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conrad Kaplan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            color: #333;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .tab-content {
+            display: none;
+            text-align: left;
+        }
+        .active-tab {
+            background-color: #45A049;
+        }
+        .active-content {
+            display: block;
+        }
+    </style>
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active-tab";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Conrad Kaplan</h1>
+        <p>Hello, I am Conrad Kaplan. I am a mathematics major at the University of Florida.</p>
+        <p>I'm also an avid music composer, and have music on Spotify that's very math-based.</p>
+    </div>
+    <div class="container">
+        <button class="tab" onclick="openTab('resume')">Resume</button>
+        <div id="resume" class="tab-content">
+            <h2>Resume</h2>
+            <p><strong>WBHS Mu Alpha Theta, President/Competitor, 10th - 12th grades</strong><br>
+                Practice and compete in Miami-Dade, Broward, and Palm Beach Counties district math competitions on high school calculus team (scored based on a combination of correct answers and speed); mentor students in geometry and algebra.</p>
+            <p><strong>Florida Youth Orchestra, Violinist, 3rd - 12th grades</strong><br>
+                Play violin in a high school youth orchestra that performs at school concerts, local elementary schools, and community events; performed with flutist Nestor Torres.</p>
+            <p><strong>Music Composer, 8th - 12th grades</strong><br>
+                Compose hybrid-orchestral music using Spitfire Audio software and Linux Multimedia Studio; share musical creations on Spotify and SoundCloud.</p>
+        </div>
+    </div>
+</body>
+</html>
